@@ -1,79 +1,141 @@
-<!DOCTYPE html>
+
 <html>
+<head>
+<title>tpetr.net</title>
+<link href="stylesheets/reset.css" rel="stylesheet" type="text/css" />
+<style>
+body {
+color:white;
+background:url(rain.jpg);
+}
+#nametag {
+font-family:georgia;
+font-weight:100;
+position:absolute;
+top:50%;
+left:50%;
+height:8em;
+width:900px;
+margin-top:-8em;
+margin-left:-450px;
+background:rgba(64,64,64,.5);
+border-radius: 10px;
+text-align:center;
+padding:5em 0em;
+}
+#nametag h1 {
+position:relative;
+display:inline;
+}
+#nametag .container {
+position:relative;
+margin:0px 32px;
+font-size:6em;
+text-shadow: 2px 2px #000;
+height:209px;
+}
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Tpetr.net : Homepage" />
+#nametag .container a {
+color:white;
+text-decoration:none;
+}
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+.bracket {
+position:absolute;
+left:0px;
+top:4em;
+font-size:.3em;
+width:100%;
+-webkit-transition: all 1s ease-in-out;
+-moz-transition: all 1s ease-in-out;
+opacity:1;
+color:black;
+text-shadow:none;
+}
 
-    <title>Tpetr.net</title>
-  </head>
+.above {
+top:-2.5em;
+}
 
-  <body>
+.hide {
+-webkit-transform: translate(0px, -20px);
+-moz-transform: translate(0px, -20px);
+opacity:.3;
+}
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/tpetr/tpetr.net">View on GitHub</a>
+.above.hide {
+-webkit-transform: translate(0px, 20px);
+-moz-transform: translate(0px, 20px);
+}
 
-          <h1 id="project_title">Tpetr.net</h1>
-          <h2 id="project_tagline">Homepage</h2>
+.cookie {
+-webkit-transform: none;
+-moz-transform: none;
+opacity:1;
+}
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/tpetr/tpetr.net/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/tpetr/tpetr.net/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+.curly {
+width:100%;
+height:50px;
+}
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Tpetr.net maintained by <a href="https://github.com/tpetr">tpetr</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="javascripts/jquery.cookie.js"></script>
+</head>
+<body>
+<div id="nametag">
+<div class="container">
+<h1>tom.petr<span class="bracket hide"><canvas class="curly"></canvas><br><a href="http://linkedin.com/in/tpetr">linkedin</a></span></h1><h1>@tpetr<span class="bracket hide"><canvas class="curly"></canvas><br><a href="http://twitter.com/tpetr">twitter</a></span></h1><h1>.net</h1><span class="bracket above hide"><a href="mailto:tom.petr@tpetr.net">email</a><br><canvas class="curly above" /></span>
+</div>
+</div>
+<script>
+$(function () { 
+$('.curly').each(function (i, element) {
+console.log(element)
+var ctx = element.getContext('2d');
+var h = element.clientHeight;
+var w = element.clientWidth;
+element.width = w;
+element.height = h;
+console.log("h=" + h + ", w=" + w)
+if ($(element).hasClass('above')) {
+ctx.moveTo(w/2, 0);
+ctx.bezierCurveTo(w/2, h, 0, 0, 0, h)
+ctx.bezierCurveTo(0, -8, w/2, h-8, w/2, 0);
+ctx.fillStyle = "#FFFFFF";
+ctx.fill();
+ctx.bezierCurveTo(w/2, h, w, 0, w, h)
+ctx.bezierCurveTo(w, -8, w/2, h-8, w/2, 0);
+ctx.fillStyle = "#FFFFFF";
+ctx.fill();
+} else {
+ctx.moveTo(w/2, h);
+ctx.bezierCurveTo(w/2, 0, 0, h, 0, 0)
+ctx.bezierCurveTo(0, h-8, w/2, -8, w/2, h);
+ctx.fillStyle = "#FFFFFF";
+ctx.fill();
+ctx.bezierCurveTo(w/2, 0, w, h, w, 0)
+ctx.bezierCurveTo(w, h-8, w/2, -8, w/2, h);
+ctx.fillStyle = "#FFFFFF";
+ctx.fill();
+}
+});
+//if ($.cookie('skip_transitions')) {
+//	$('.hide').addClass('cookie');
+//} else {
+//	$.cookie('skip_transitions', '1');
+	$('.hide').removeClass('hide');
+//}
+});
+</script>
+<!-- Start of HubSpot Logging Code  -->
+<script type="text/javascript" language="javascript">
+var hs_portalid=170885; 
+var hs_salog_version = "2.00";
+var hs_ppa = "tpetr1.app12.hubspot.com";
+document.write(unescape("%3Cscript src='" + document.location.protocol + "//" + hs_ppa + "/salog.js.aspx' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- End of HubSpot Logging Code -->
+</body>
 </html>
